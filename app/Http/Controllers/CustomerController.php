@@ -47,4 +47,12 @@ class CustomerController extends Controller
 
        return view('backend.customer.customer_list',compact('c_list'));
     }
+
+
+    public function delete(Request $request)
+    {
+        $customer = customer::find($request->customer_del);
+        $customer->delete();
+        return back();
+    }
 }
