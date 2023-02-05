@@ -23,3 +23,4 @@ Route::get('/create-category',[CategoryController::class, 'create'])->name('crea
 
 Route::post('/category-store',[CategoryController::class, 'store'])->name('category_store');
 Route::get('/category-list',[CategoryController::class, 'createList'])->name('category_list');
+Route::post('/delete', [CategoryController::class, 'delete'])->name('delete');

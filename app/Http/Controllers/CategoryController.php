@@ -31,4 +31,11 @@ class CategoryController extends Controller
        return view('backend.category.category_list',compact('c_list'));
     }
 
+    public function delete(Request $request)
+    {
+        $category = Category::find($request->category_id);
+        $category->delete();
+        return back();
+    }
+
 }
