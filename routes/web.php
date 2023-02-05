@@ -14,7 +14,9 @@ Route::get('/', [BackendController::class, 'index'])->name('home');
 Route::get('/add-customer',[CustomerController::class, 'addCustomer'])->name('add_customer');
 Route::get('/customer-list',[CustomerController::class, 'customerList'])->name('customer_list');
 Route::post('/customer-store',[CustomerController::class, 'store'])->name('customer_store');
-Route::get('/customer-delete',[CustomerController::class, 'delete'])->name('customer_del');
+
+Route::post('/delete', [CustomerController::class, 'delete'])->name('delete');
+
 
 
 Route::get('/create-category',[CategoryController::class, 'create'])->name('create_category');

@@ -31,7 +31,7 @@
 
 						<td>{{$loop->iteration}}</td>
 						<td>{{$data->name}}</td>
-                        <td>{{$data->select_cat== 1 ? 'Monitor':'Printor'}}</td>
+                        <td>{{$data->select_cat}}</td>
 						<td>{{$data->description}}</td>
 
                         <td>

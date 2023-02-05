@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use Illuminate\Support\Facades\Redirect;
+use PhpParser\Node\Stmt\Return_;
 
 class CustomerController extends Controller
 {
@@ -48,11 +50,15 @@ class CustomerController extends Controller
        return view('backend.customer.customer_list',compact('c_list'));
     }
 
-
     public function delete(Request $request)
     {
-        $customer = customer::find($request->customer_del);
+        $customer = Customer::find($request->customer_id);
         $customer->delete();
         return back();
     }
+
+
+
+
+
 }
