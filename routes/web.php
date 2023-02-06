@@ -31,4 +31,5 @@ Route::put('/category/update/{id}',[CategoryController::class, 'update'])->name(
 
 Route::get('/add-product',[AddController::class, 'add'])->name('add_product');
 Route::post('/product_store',[AddController::class, 'storeProduct'])->name('product_store');
+Route::get('/product_list',[AddController::class, 'pList'])->name('product_list');
 
