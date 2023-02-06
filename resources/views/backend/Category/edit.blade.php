@@ -3,15 +3,16 @@
 <div class="container pt-3">
     <div class="card">
         <div class="card-header">
-         Create Category
+         Edit Category
           </div>
         <div class="card-body">
-            <form action="{{route('category_store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('category_update',$data->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
+                @method('put')
                 <div class="col-md-6">
                     <div class="form-group mb-3">
                         <label for="exampleFormControlInput1">Category Name</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name')}}" placeholder="Category Name"
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name',$data->name)}}" placeholder="Category Name"
                         >
 
 
@@ -34,14 +35,14 @@
 
                       <div class="form-group mb-3">
                         <label for="exampleFormControlTextarea1">Description</label>
-                        <textarea class="form-control @error('description') is-invalid @enderror" value="{{ old('description')}}" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control @error('description') is-invalid @enderror" value="{{ old('description',$data->description)}}" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                         @error('description')
                         <p class="invalid-feedback">{{ $message}}</p>
                         @enderror
 
                       </div>
 
-                      <button type="submit" class="btn btn-info">Submit</button>
+                      <button type="submit" class="btn btn-info">Update</button>
 
                 </div>
 

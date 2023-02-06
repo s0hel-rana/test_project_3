@@ -35,15 +35,15 @@
 						<td>{{$data->description}}</td>
 
                         <td>
-
 							{{-- <a href="" class="btn btn-info btn-xs" > <i class="fas fa-pencil-alt"></i></a>
 							<a href="" class="btn btn-danger btn-xs" > <i class="fas fa-trash-alt"></i></a> --}}
                             <form action="{{ route('delete')}}" id="delete" method="post">
                                 @csrf
-                                <a href="" class="btn btn-info btn-xs" > <i class="fas fa-pencil-alt"></i></a>
+                            <a href="{{ route('category_edit',$data->id)}}" class="btn btn-info btn-xs" > <i class="fas fa-pencil-alt"></i></a>
                                 <input type="hidden" name="category_id" value="{{ $data->id }}">
                                 <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure, You want to delete this?')">
                             </form>
+
                     </td>
                     </tr>
 					@endforeach
