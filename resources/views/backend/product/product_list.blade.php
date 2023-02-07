@@ -40,18 +40,20 @@
 						<td>{{$data->name}}</td>
                         <td>{{$data->sub_category}}</td>
 						<td>{{$data->code}}</td>
-                        <td>{{$data->image}}</td>
+                        <td>
+                            <img width="100" height="50" src="{{asset($data->image)}}" alt="" srcset="">
+                        </td>
                         <td>{{$data->price}}</td>
 
                         <td>
 							{{-- <a href="" class="btn btn-info btn-xs" > <i class="fas fa-pencil-alt"></i></a>
 							<a href="" class="btn btn-danger btn-xs" > <i class="fas fa-trash-alt"></i></a> --}}
-                            <form action="" method="post">
-                                {{-- {{ route('delete')}}" id="delete" --}}
+                            <form action="{{ route('delete')}}" id="delete" method="post">
+
                                 @csrf
-                            <a href="" class="btn btn-info btn-xs" > <i class="fas fa-pencil-alt"></i></a>
-                            {{-- {{ route('category_edit',$data->id)}} --}}
-                                <input type="hidden" name="category_id" value="{{ $data->id }}">
+                              <a href="{{ route('product_edit',$data->id)}}" class="btn btn-info btn-xs" > <i class="fas fa-pencil-alt"></i></a>
+
+                                <input type="hidden" name="product_id" value="{{ $data->id }}">
                                 <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure, You want to delete this?')">
                             </form>
 

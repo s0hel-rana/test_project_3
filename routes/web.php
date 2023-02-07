@@ -32,4 +32,7 @@ Route::put('/category/update/{id}',[CategoryController::class, 'update'])->name(
 Route::get('/add-product',[AddController::class, 'add'])->name('add_product');
 Route::post('/product_store',[AddController::class, 'storeProduct'])->name('product_store');
 Route::get('/product_list',[AddController::class, 'pList'])->name('product_list');
+Route::post('/delete', [AddController::class, 'delete'])->name('delete');
+Route::get('/product/edit/{id}',[AddController::class, 'edit'])->name('product_edit');
+Route::post('/product/update/{id}',[AddController::class, 'update'])->name('product_update');
 

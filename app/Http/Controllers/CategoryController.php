@@ -62,6 +62,7 @@ class CategoryController extends Controller
         $category->delete();
         return back();
     }
+    // Edit....
 
     public function edit($id) {
         $data = Category::findOrFail($id);
